@@ -40,3 +40,21 @@ produtos_ecommerce = [
     [3300, 700],
     [1900, 400]
 ]
+
+
+if 'livro' in produtos:
+    i_livro = produtos.index('livro')
+    print(i_livro)
+
+    total_antigo = produtos_ecommerce[i_livro][0] * \
+        produtos_ecommerce[i_livro][1]
+    print(total_antigo)
+
+    produtos_ecommerce[i_livro][1] = produtos_ecommerce[i_livro][1] * 1.1
+    print(produtos_ecommerce[i_livro][1])
+
+    total_novo = (produtos_ecommerce[i_livro][0] *
+                  produtos_ecommerce[i_livro][1])
+    print(total_novo)
+    print('Vamos pagar a mais de imposto o valor de R${:,}'.format(
+        total_novo - total_antigo))
